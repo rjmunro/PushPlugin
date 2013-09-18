@@ -13,11 +13,9 @@
 
 	<license>MIT</license>
 
-	<asset src="www/PushNotification.js" target="PushNotification.js" />
-
-	<engines>
-		<engine name="cordova" version=">=3.0.0" />
-	</engines>	
+	<js-module src="www/PushNotification.js" name="PushNotification">
+		<clobbers target="navigator.pushNotification" />
+	</js-module>	
 	
 	<!-- android -->
 	<platform name="android">
@@ -61,7 +59,6 @@
 
 	<!-- ios -->
 	<platform name="ios">
-		
 		<config-file target="config.xml" parent="/*">
 			<feature name="PushPlugin">
 				<param name="ios-package" value="PushPlugin"/>
